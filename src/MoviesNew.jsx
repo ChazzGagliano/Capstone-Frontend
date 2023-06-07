@@ -11,7 +11,7 @@
   
   return (
     <div>
-      <h1>New Photo</h1>
+      <h1>Add Movie</h1>
       <form onSubmit={handleSubmit}>
         <div>
           Name: <input name="name" type="text" />
