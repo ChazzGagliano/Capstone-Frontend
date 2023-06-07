@@ -22,13 +22,9 @@ export function MoviesIndex(props) {
           <h2>{movie.name}</h2>
           <img src={movie.image_url} />
           <p>Description: {movie.description}</p>
-         <p>Category: {movie.Category}</p>
-
-          
+         <p>Category: {movie.category}</p>
         <button onClick={() => handleAddToFavorites(movie.id)}type="input">favorite</button> 
-      
         </div>
-        
       ))}
   </div>
   );

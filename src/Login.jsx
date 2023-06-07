@@ -29,22 +29,25 @@ export function Login() {
   };
 
   return (
-    <div id="login">
-      <h1>Login</h1>
-      <ul>
-        {errors.map((error) => (
-          <li key={error}>{error}</li>
-        ))}
-      </ul>
-      <form onSubmit={handleSubmit}>
-        <div>
-          Email: <input name="email" type="email" />
-        </div>
-        <div>
-          Password: <input name="password" type="password" />
-        </div>
-        <button type="submit">Login</button>
-      </form>
-    </div>
+    <div id="login" className="login-container">
+    <h1>Login</h1>
+    <ul className="error-list">
+      {errors.map((error) => (
+        <li key={error}>{error}</li>
+      ))}
+    </ul>
+    <form className="login-form" onSubmit={handleSubmit}>
+      <div className="form-group">
+        <label htmlFor="email">Email:</label>
+        <input id="email" name="email" type="email" />
+      </div>
+      <div className="form-group">
+        <label htmlFor="password">Password:</label>
+        <input id="password" name="password" type="password" />
+      </div>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+  
   );
 }

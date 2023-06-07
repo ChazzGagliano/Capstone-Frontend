@@ -1,8 +1,70 @@
 img {
-  width: 100px;
+  width: 200px;
 }
 
 #root {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
 
+}
+
+.menu-container {
+  background-color: rgb(9, 156, 255);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.menu-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu-list li a {
+  display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+  color: rgb(253, 254, 255);
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: center;
+}
+
+
+.login-form .form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(9, 156, 255);
+  color: rgb(253, 254, 255);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
