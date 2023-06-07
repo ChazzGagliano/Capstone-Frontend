@@ -8,39 +8,22 @@ export function Header() {
     
   };
   return(
-
-  <nav className="navbar navbar-expand-lg navbar-light bg-light">
-  <a className="navbar-brand" href="#">Navbar</a>
-  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span className="navbar-toggler-icon"></span>
-  </button>
-
-  <div className="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul className="navbar-nav mr-auto">
-      <li className="nav-item">
-        <a className="nav-link" href="/">Home</a>
-      </li>
-      <li className="nav-item dropdown">
-        <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li>
-          <a className="dropdown-item" href="./signup">Signup</a>
-          </li>
-          <li>
-          <a className="dropdown-item" href="./login">Login</a>
-          </li>
-          <div className="dropdown-divider"></div>
-          <a className="dropdown-item" href="#" onClick={handleClick}>
-         Logout</a>
-        </div>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link disabled" href="./movies/new">Add Movie</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-
+    <div>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="./signup">Signup</a></li>
+        <li><a href="./login">Login</a></li>
+        <a href="#" onClick={handleClick}>
+         Logout
+        </a>
+        <li><a href="./users/:id">Account</a></li>
+        <li>
+        <a href="./movies/new">Add Movie</a> 
+        </li>
+      </ul>
+    </div>
     
   )
 }
+
 
