@@ -10,6 +10,7 @@ import { FavoritesIndex } from "./FavoritesIndex.jsx"
 
 
 
+
 export function Content() {
   const [movies, setMovies] = useState([]);
   const handleCreateMovie = (params, successCallback) => {
@@ -33,6 +34,7 @@ export function Content() {
   const [favorites, setFavorites] = useState([])
   useEffect(handleIndexMovies, []);
 
+
   const handleIndexFavorites = () => {
         console.log("handleIndexFavorites");
         axios.get("http://localhost:3000/favorites.json").then((response) => {
@@ -54,6 +56,7 @@ export function Content() {
     <div>
        <LogoutLink/>
     <Routes>
+     
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
       <Route path="/logout" element={<LogoutLink />} />

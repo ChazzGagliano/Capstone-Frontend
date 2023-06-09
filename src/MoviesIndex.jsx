@@ -1,6 +1,8 @@
 import axios from "axios";
+import { useState } from "react"
 
 export function MoviesIndex(props) {
+  const [searchTerm, setSearchTerm] = useState("")
   const handleAddToFavorites = (movieId) => {
     console.log('add to favorites')
     console.log(movieId)
@@ -17,7 +19,8 @@ export function MoviesIndex(props) {
   return (
     <div>
     <h1>All Movies</h1>
-      {props.movies.map((movie) => (
+    <p>Search: <input type="text" value={searchTerm} onChange={(event) => {setSearchTerm(event.target.value)}} /></p>
+      {props.movies.filter(movie => movie.name.toLowerCase().includes(searchTerm.toLowerCase())).map(movie => (
         <div key={movie.id}>
           <h2>{movie.name}</h2>
           <img src={movie.image_url} />

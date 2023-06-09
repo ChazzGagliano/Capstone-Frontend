@@ -1,6 +1,4 @@
 
-
-
  export function MoviesNew(props) {
 
      const handleSubmit = (event) => {
