@@ -9,7 +9,7 @@ export function FavoritesIndex(props) {
       <div key={favorite.id}>
         <h3>Movie: {favorite.movie.name}</h3>
         <img src={favorite.movie.image_url} />
-        <p>Description: {favorite.movie.description}</p>
+        <p>{favorite.movie.description}</p>
         <p>Genre: {favorite.movie.category}</p>
         <button onClick={() => handleClick(favorite.id)}type="input">remove</button> 
       </div>

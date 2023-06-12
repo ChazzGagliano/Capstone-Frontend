@@ -3,7 +3,14 @@ import { useState } from "react";
 
 export function Signup() {
   const [errors, setErrors] = useState([]);
+  const [name, setName] = useState("");
 
+  let nameLengthMessage;
+  if (name.length > 20) {
+    nameLengthMessage = <small id="bad">Your name is too long make it shorter</small>
+  } else {
+    nameLengthMessage = <small>{20 - name.length} characters remaining</small>
+  }
   const handleSubmit = (event) => {
     event.preventDefault();
     setErrors([]);
@@ -31,7 +38,8 @@ export function Signup() {
       </ul>
       <form onSubmit={handleSubmit}>
         <div>
-          Name: <input name="name" type="text" />
+          Name: <input name="name" type="text" value={name} onChange={(event) => {setName(event.target.value)}} />
+          {nameLengthMessage}
         </div>
         <div>
           Email: <input name="email" type="email" />

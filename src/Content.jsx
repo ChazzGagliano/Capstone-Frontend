@@ -8,9 +8,6 @@ import { MoviesIndex } from "./MoviesIndex.jsx"
 import { MoviesNew } from "./MoviesNew.jsx"
 import { FavoritesIndex } from "./FavoritesIndex.jsx"
 
-
-
-
 export function Content() {
   const [movies, setMovies] = useState([]);
   const handleCreateMovie = (params, successCallback) => {
@@ -31,6 +28,7 @@ export function Content() {
 
     });
   };
+  
   const [favorites, setFavorites] = useState([])
   useEffect(handleIndexMovies, []);
 
@@ -45,16 +43,16 @@ export function Content() {
     
       useEffect(handleIndexFavorites, []);
 
-      const handleDestroyFavorite = (favorite) => {
-          console.log("handleDestroyFavorite", favorite);
-           axios.delete(`http://localhost:3000/favorites/${favorite}.json`).then((response) => {
-             setFavorites(favorites.filter((f) => f.id !== favorite));
-           });
-         };
+  const handleDestroyFavorite = (favorite) => {
+    console.log("handleDestroyFavorite", favorite);
+    axios.delete(`http://localhost:3000/favorites/${favorite}.json`).then((response) => {
+    setFavorites(favorites.filter((f) => f.id !== favorite));
+    });
+};
   
-  return (
-    <div>
-       <LogoutLink/>
+return (
+  <div>
+      
     <Routes>
      
       <Route path="/signup" element={<Signup />} />
