@@ -19,7 +19,7 @@ export function MoviesIndex(props) {
       // setMovies(response.data);
     });
   }
-  useEffect(getActorsForFilms, []);
+//   useEffect(getActorsForFilms, []);
 
   return (
     <div className="movie-container">
@@ -32,9 +32,15 @@ export function MoviesIndex(props) {
           <h2>{movie.name}</h2>
           <img src={movie.image_url} alt={movie.name} />
           <p> {movie.description}</p>
+          {movie.comments.map((comment) => {
+            return (
+                <div classname="comment-container">
+                    <p>{comment.user_name}</p>
+                    <p>{comment.text}</p>
+                </div>
+            )
+          })}
           <p><strong>Starring:</strong> {movie.actors}</p> 
-          {/* <p><strong>Username:</strong> {movie.comments.user_name && movie.comments.user_name[0]}</p>
-          <p><strong>Comment:</strong> {movie.comments.text && movie.comments.text[0]}</p> */}
         </div>
         <button onClick={() => handleAddToFavorites(movie.id)} type="input">Add to Favorites</button> 
       </div>
