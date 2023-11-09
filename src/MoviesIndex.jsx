@@ -34,7 +34,7 @@ export function MoviesIndex(props) {
           <p> {movie.description}</p>
           {movie.comments.map((comment) => {
             return (
-                <div classname="comment-container">
+                <div className="comment-container">
                     <p>{comment.user_name}</p>
                     <p>{comment.text}</p>
                 </div>
