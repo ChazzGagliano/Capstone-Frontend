@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react"
 import { useEffect } from "react";
+import { Modal } from "./Modal"
 
 export function MoviesIndex(props) {
   const [searchTerm, setSearchTerm] = useState("")
@@ -11,6 +12,7 @@ export function MoviesIndex(props) {
       console.log(response.data)
     })
  }
+
   
   const getActorsForFilms = () => {
     axios.get('http://localhost:3000/actors.json?movie=${movie.name}').then(response => {
@@ -19,6 +21,7 @@ export function MoviesIndex(props) {
       // setMovies(response.data);
     });
   }
+
 //   useEffect(getActorsForFilms, []);
 
   return (
@@ -39,8 +42,9 @@ export function MoviesIndex(props) {
                     <p>{comment.text}</p>
                 </div>
             )
-          })}
-          <p><strong>Starring:</strong> {movie.actors}</p> 
+        })}
+        {/* <button onClick={() => props.onShowMovie(movie)}>Add Comment</button>
+          <p><strong>Starring:</strong> {movie.actors}</p>  */}
         </div>
         <button onClick={() => handleAddToFavorites(movie.id)} type="input">Add to Favorites</button> 
       </div>
