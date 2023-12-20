@@ -8,7 +8,7 @@ import { MoviesIndex } from "./MoviesIndex.jsx"
 import { MoviesNew } from "./MoviesNew.jsx"
 import { FavoritesIndex } from "./FavoritesIndex.jsx"
 import { Modal } from "./Modal"
-import { MoviesShow } from "./MoviesShow"
+// import { MoviesShow } from "./MoviesShow"
 
 
 export function Content() {
@@ -27,7 +27,7 @@ export function Content() {
     // make my web request to api
     axios.get('http://localhost:3000/movies.json').then(response => {
       console.log(response.data.articles);
-      // Movies = response.data
+    //   Movies = response.data
       setMovies(response.data);
 
     });
@@ -75,7 +75,7 @@ return (
       <Route path="/favorites" element={<FavoritesIndex favorites={favorites} onDestroyFavorite={handleDestroyFavorite}/> }/>
       <Route path="/" element={<MoviesIndex movies={movies} onShowMovie={handleShowMovie}/>}  />
       <Route path="/" element={<Modal show={isMoviesShowVisible} onClose={handleClose}/>} />
-      <Route path="/" element={<MoviesShow movie={currentMovie} />} />
+      {/* <Route path="/" element={<MoviesShow movie={currentMovie} />} /> */}
       <Route path="/movies/new" element={<MoviesNew onCreateMovie={handleCreateMovie}/> }/>
     </Routes>
   </div>

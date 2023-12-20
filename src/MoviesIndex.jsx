@@ -43,8 +43,8 @@ export function MoviesIndex(props) {
                 </div>
             )
         })}
-        {/* <button onClick={() => props.onShowMovie(movie)}>Add Comment</button>
-          <p><strong>Starring:</strong> {movie.actors}</p>  */}
+        {/* <button onClick={() => props.onShowMovie(movie)}>Add Comment</button> */}
+          <p><strong>Starring:</strong> {movie.actors}</p> 
         </div>
         <button onClick={() => handleAddToFavorites(movie.id)} type="input">Add to Favorites</button> 
       </div>
