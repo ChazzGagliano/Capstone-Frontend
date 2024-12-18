@@ -5,6 +5,7 @@
        event.preventDefault();
        const params = new FormData(event.target);
        props.onCreateMovie(params, () => event.target.reset());
+       window.location.href = "/";
      };
   
   return (
